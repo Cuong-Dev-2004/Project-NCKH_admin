@@ -9,6 +9,7 @@ const app = express();
 const AuthRouter = require('./src/Routers/Auth.js');
 const AdminRouter = require('./src/Routers/Admin.js');
 const StaffRouter = require("./src/Routers/Staff.js");
+const Booking = require("./src/Routers/Booking.js")
 dotenv.config();
 
 mongoose.connect(process.env.MONGODB_URL)
@@ -27,5 +28,6 @@ app.get('/', (req, res) => {
 app.use("/api/auth", AuthRouter);
 app.use("/api/admin", AdminRouter);
 app.use("/api/staff", StaffRouter);
+app.use("/api/booking", Booking);
 
 app.listen(port, () => console.log("App Listening " + port));

@@ -10,6 +10,7 @@ const guideSchema = new mongoose.Schema({
     location: { type: String, default: "" },
     experience: { type: Number, default: 0 },
     pricePerHour: { type: Number, default: 0 },
+    style: [{ type: String, default: "" }],
     availability: [{
         date: { type: Date, default: Date.now },
         isAvailable: { type: Boolean, default: true }
