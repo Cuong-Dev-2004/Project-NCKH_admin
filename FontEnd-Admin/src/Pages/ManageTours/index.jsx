@@ -92,7 +92,7 @@ function ManagerTours() {
         if (!window.confirm("Bạn chắc chắn muốn xoá?")) return;
 
         try {
-            const token = getToken();
+            const token = getToken("tokenAdmin");
 
             await axios.delete(`${API}/RmProdcutTour/${id}`, {
                 headers: {
@@ -133,7 +133,7 @@ function ManagerTours() {
 
 
         try {
-            const token = getToken();
+            const token = getToken("tokenAdmin");
 
             if (!editMode) {
                 await axios.post(`http://localhost:3000/api/staff/CreateProductTour`, form, {

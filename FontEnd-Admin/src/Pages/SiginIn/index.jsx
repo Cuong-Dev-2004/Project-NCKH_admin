@@ -24,8 +24,8 @@ function SignIn() {
         try {
             const res = await axios.post("http://localhost:3000/api/auth/Login", form);
             if (res.data.token) {
-                setToken("token", res.data.token);
-                navigate("/app/ManageGiaoDich"); // Redirect sau login
+                setToken("tokenAdmin", res.data.token);
+                navigate("/app/ManageGiaoDich");
             } else {
                 setError("Đăng nhập thất bại");
             }

@@ -10,7 +10,7 @@ export default function GuideStatusPageUI() {
     const [guides, setguides] = useState([]);
 
     useEffect(() => {
-        const token = getToken();
+        const token = getToken("tokenAdmin");
         axios.get("http://localhost:3000/api/admin/GetGuides",
             {
                 headers: {
@@ -29,13 +29,13 @@ export default function GuideStatusPageUI() {
     }
     const setBaoBan = async (id) => {
         try {
-            const string = getToken();
+            const string = getToken("tokenAdmin");
 
             const res = await axios.put(
                 "http://localhost:3000/api/admin/UpdateGuide",
                 { id },
                 {
-                    headers: { Authorization: string }
+                    headers: { Authorization: `Bearer ${string}` }
                 }
             );
 

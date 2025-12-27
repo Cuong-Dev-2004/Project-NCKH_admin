@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { getToken } from "../../auth/HandleToken";
 
 export default function HomePage() {
     const [form, setForm] = useState({ input: "" });
@@ -10,7 +11,11 @@ export default function HomePage() {
 
     const fetchBookings = async () => {
         try {
-            const res = await axios.get("http://localhost:3000/api/booking/getALLBooking");
+            const token = getToken("tokenAdmin");
+            const res = await axios.get(
+                "http://localhost:3000/api/booking/getALLBooking"
+            );
+
             setListBooking(res.data.data || []);
         } catch (err) {
             console.log(err);

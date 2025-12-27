@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { createBooking, GetALLBooking, getBookingById, updateBooking, deleteBooking } = require("../Controllers/bookingController.js");
 const CheckAuth = require("../Middleware/authentication.js");
+const CheckAdmin = require("../Middleware/CheckAdmin.js");
 router.post("/create-booking", createBooking);
 router.get("/getALLBooking", GetALLBooking);
 router.get("/:id", getBookingById);

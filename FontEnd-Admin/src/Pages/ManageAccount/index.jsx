@@ -14,7 +14,7 @@ export default function ManagerAccount() {
         role: ""
     });
 
-    const token = getToken();
+    const token = getToken("tokenAdmin");
 
     useEffect(() => {
         axios.get("http://localhost:3000/api/admin/getAllUser", {
