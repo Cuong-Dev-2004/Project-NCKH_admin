@@ -46,7 +46,6 @@ exports.createBooking = async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 };
-
 // GET ALL BOOKINGS
 exports.GetALLBooking = async (req, res) => {
     try {
